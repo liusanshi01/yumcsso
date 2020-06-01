@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script
+            src="jquery-2.1.1.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<script type="text/javascript">
+    function saveReport() {
+        // jquery 表单提交
+        $("#uploadForm").ajaxSubmit(function(message) {
+            // 对于表单提交成功后处理，message为提交页面saveReport.htm的返回内容
+            alert(message);
+        });
+        return false; // 必须返回false，否则表单会自己再做一次提交操作，并且页面跳转
+    }
+    function check(file) {
+        if (file.value == null || file.value == "") {
+            alert("请您选择要导入的Excel数据!");
+            return false;
+        }
+    }
+</script>
+
+</head>
+<body>
+<div>
+    <form id="uploadForm" enctype="multipart/form-data" action="/upload"
+          method="post" onsubmit="return saveReport();">
+        <!--  target="nm_iframe"" -->
+        <input class="file input" type="file" id="file" name="file1"
+               multiple="multiple" /><label>上传先知信息</label>
+        <input type="submit"
+           onclick="return check(file)" value="上传"
+           style="position: relative; top: 0px; left: 180px; height: 24px;" />
+        <!--  <button id="upload" type="button" onclick="picture();">上传</button>  -->
+    </form>
+    <!-- <iframe id="id_iframe" name="nm_iframe" style="display:none;"></iframe> -->
+</div>
+
+
+<script src="js/jquery-form.js"></script>
+</body>
+</html>

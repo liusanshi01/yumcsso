@@ -1,0 +1,28 @@
+{
+  "dataSource" :{
+    "columnSpliter" :"0x2C",
+    "dateFormat" :null,
+    "dateTimeFormat" :null,
+    "encoding" :"utf-8",
+    "fileSuffix" : [".csv"],
+    "fileType" :"text",
+    "isFirstLineSchema" :false,
+    "lineSpliter" :"0x0A",
+    "originFileType": "csv",
+    "nullValues" :null,
+    "protocol" :"HDFS",
+    "sql" :"",
+    "sqlTableName" :"t1",
+    "url" : ""
+  },
+
+  "dataTarget" :{
+    "columnError" :"SKIP",
+    "format" :"parquet",
+    "prn" :"kpmid/lsltest009.table",
+    "schema" :
+    [{"name" :"col_0", "type" :"String"}]
+  },
+  "typeError" :"SKIP"
+
+}
