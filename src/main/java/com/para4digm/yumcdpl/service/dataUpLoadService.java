@@ -47,6 +47,9 @@ public class dataUpLoadService {
      **/
     public boolean dataUpload(String Hdfsurl) {
 
+        if (Hdfsurl == null || Hdfsurl.isEmpty()){
+            return false;
+        }
         //http://172.27.133.216/telamon/v1/data/file
         Map<String, Object> result = CommonUtils.getMap("/json/dataFile.json");
         JSONObject dataSourceobject = (JSONObject) result.get("dataSource");
@@ -82,6 +85,5 @@ public class dataUpLoadService {
         }
         return false;
     }
-
 
 }

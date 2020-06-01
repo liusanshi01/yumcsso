@@ -44,7 +44,7 @@ public class cdplContioller {
     @Autowired
     ProphetClient prophetClient;
 
-    //上传文件的接口
+    //上传数据通过hdfs的接口
     @RequestMapping(value = "/domodel" , method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
     public ModelAndView domodel(HttpServletRequest request, Model model ) throws IOException {
@@ -54,13 +54,19 @@ public class cdplContioller {
         boolean result = datauploadservice.dataUpload(hdfsurl);
         System.out.println(result);
 
-        mav.setViewName("success");
-        return mav;
+        if(result){
+            mav.setViewName("success");
+            return mav;
+        }
+        else {
+            mav.setViewName("dodataup");
+            return mav;
+        }
 
     }
 
 
-    //上传文件的接口
+    //上传数据通过文件的接口
     @RequestMapping(value = "/upload")
     @ResponseBody
     public ModelAndView upload(@RequestParam("file1") MultipartFile file) throws IOException {
