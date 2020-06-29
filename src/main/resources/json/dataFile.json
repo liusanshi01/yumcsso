@@ -18,7 +18,7 @@
 
   "dataTarget" :{
     "columnError" :"SKIP",
-    "format" :"parquet",
+    "format" :"csv",
     "prn" :"kpmid/lsltest009.table",
     "schema" :
     [{"name" :"col_0", "type" :"String"}]

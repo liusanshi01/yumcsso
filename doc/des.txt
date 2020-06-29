@@ -1,0 +1,4 @@
+1. 此项目目标（构建一个 spring-boot + thethy + mybatis)小型项目
+2。也有注解封装的使用@GenericResponseBody
+3。了解生成  mapper xml  的生成工具。(generatorConfig.xml generatorCore GeneratorSqlmap（main）) 自动生成(dto service mapper)工具太几把好用了
+4。后期还会学习Vue的学习工具吧。（这里留下一个伏笔）  大数据，我要做的事情太多了 时间根本不够用。

@@ -14,4 +14,7 @@ public class DataTarget {
     private String prn;
 
     private Object schema;
+
+    private String groupPrn;
+
 }

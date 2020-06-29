@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.para4digm.yumcdpl.mapper.MidofficeNlpDictFuncMapper">
+  <resultMap id="BaseResultMap" type="com.para4digm.yumcdpl.dto.domain.MidofficeNlpDictFunc">
+    <id column="dict_id" jdbcType="INTEGER" property="dictId" />
+    <result column="dict_name" jdbcType="VARCHAR" property="dictName" />
+    <result column="dict_desc" jdbcType="VARCHAR" property="dictDesc" />
+    <result column="dict_path" jdbcType="VARCHAR" property="dictPath" />
+    <result column="project_id" jdbcType="INTEGER" property="projectId" />
+    <result column="create_username" jdbcType="VARCHAR" property="createUsername" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_username" jdbcType="VARCHAR" property="modifyUsername" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    dict_id, dict_name, dict_desc, dict_path, project_id, create_username, create_time, 
+    modify_username, modify_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from midoffice_nlp_dict_func
+    where dict_id = #{dictId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from midoffice_nlp_dict_func
+    where dict_id = #{dictId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.para4digm.yumcdpl.dto.domain.MidofficeNlpDictFunc">
+    insert into midoffice_nlp_dict_func (dict_id, dict_name, dict_desc, 
+      dict_path, project_id, create_username, 
+      create_time, modify_username, modify_time
+      )
+    values (#{dictId,jdbcType=INTEGER}, #{dictName,jdbcType=VARCHAR}, #{dictDesc,jdbcType=VARCHAR}, 
+      #{dictPath,jdbcType=VARCHAR}, #{projectId,jdbcType=INTEGER}, #{createUsername,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{modifyUsername,jdbcType=VARCHAR}, #{modifyTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.para4digm.yumcdpl.dto.domain.MidofficeNlpDictFunc">
+    insert into midoffice_nlp_dict_func
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="dictId != null">
+        dict_id,
+      </if>
+      <if test="dictName != null">
+        dict_name,
+      </if>
+      <if test="dictDesc != null">
+        dict_desc,
+      </if>
+      <if test="dictPath != null">
+        dict_path,
+      </if>
+      <if test="projectId != null">
+        project_id,
+      </if>
+      <if test="createUsername != null">
+        create_username,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="modifyUsername != null">
+        modify_username,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="dictId != null">
+        #{dictId,jdbcType=INTEGER},
+      </if>
+      <if test="dictName != null">
+        #{dictName,jdbcType=VARCHAR},
+      </if>
+      <if test="dictDesc != null">
+        #{dictDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="dictPath != null">
+        #{dictPath,jdbcType=VARCHAR},
+      </if>
+      <if test="projectId != null">
+        #{projectId,jdbcType=INTEGER},
+      </if>
+      <if test="createUsername != null">
+        #{createUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyUsername != null">
+        #{modifyUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.para4digm.yumcdpl.dto.domain.MidofficeNlpDictFunc">
+    update midoffice_nlp_dict_func
+    <set>
+      <if test="dictName != null">
+        dict_name = #{dictName,jdbcType=VARCHAR},
+      </if>
+      <if test="dictDesc != null">
+        dict_desc = #{dictDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="dictPath != null">
+        dict_path = #{dictPath,jdbcType=VARCHAR},
+      </if>
+      <if test="projectId != null">
+        project_id = #{projectId,jdbcType=INTEGER},
+      </if>
+      <if test="createUsername != null">
+        create_username = #{createUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyUsername != null">
+        modify_username = #{modifyUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null">
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where dict_id = #{dictId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.para4digm.yumcdpl.dto.domain.MidofficeNlpDictFunc">
+    update midoffice_nlp_dict_func
+    set dict_name = #{dictName,jdbcType=VARCHAR},
+      dict_desc = #{dictDesc,jdbcType=VARCHAR},
+      dict_path = #{dictPath,jdbcType=VARCHAR},
+      project_id = #{projectId,jdbcType=INTEGER},
+      create_username = #{createUsername,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_username = #{modifyUsername,jdbcType=VARCHAR},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP}
+    where dict_id = #{dictId,jdbcType=INTEGER}
+  </update>
+</mapper>

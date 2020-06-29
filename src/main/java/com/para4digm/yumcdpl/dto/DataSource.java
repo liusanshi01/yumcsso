@@ -1,7 +1,6 @@
 package com.para4digm.yumcdpl.dto;
 
 import com.alibaba.fastjson.annotation.JSONField;
-import com.google.gson.annotations.SerializedName;
 import lombok.Data;
 
 import java.util.List;
